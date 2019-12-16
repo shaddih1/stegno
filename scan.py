@@ -16,9 +16,12 @@ def main():
     print("IP Adress       | MAC Adress        | Vendor")
 
     with open("/tmp/wifi.txt", "r") as f:
+        count = 0
         for device in f:
             IP = re.findall(r'\(.*\)', device)[0].replace("(", "").replace(")","")
             MAC = re.findall(r'at (.*) on', device)[0]
             print(f"{IP:<16}| {MAC:<17} | {vendor(MAC)}")
+            count+=1
+        print(f"Total devices: {count}")
 
 main()
