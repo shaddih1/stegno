@@ -1,12 +1,24 @@
 import re
 import os
+import requests
 
-os.system("arp -a -n > /tmp/wifi.txt")
+def vendor(mac):
+    r = requests.get(f"https://macvendors.co/api/{mac}")
 
-print("IP Adress        | MAC Adress")
+    if r.status_code != 404:
+        return r.json().get("result").get("company")
 
-with open("/tmp/wifi.txt", "r") as f:
-    for device in f:
-        IP = re.findall(r'\(.*\)', device)[0].replace("(", "").replace(")","")
-        MAC = re.findall(r'at (.*) on', device)[0]
-        print(f"{IP:<17}| {MAC}")
+    return "N/A"
+
+def main():
+    os.system("arp -a -n > /tmp/wifi.txt")
+
+    print("IP Adress       | MAC Adress        | Vendor")
+
+    with open("/tmp/wifi.txt", "r") as f:
+        for device in f:
+            IP = re.findall(r'\(.*\)', device)[0].replace("(", "").replace(")","")
+            MAC = re.findall(r'at (.*) on', device)[0]
+            print(f"{IP:<16}| {MAC:<17} | {vendor(MAC)}")
+
+main()
