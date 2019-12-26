@@ -19,7 +19,7 @@ def usage():
 
 def shutdown():
     print("[Error] - Badly combined commands")
-    print("$ python stegno.py -h / --help")
+    print("$ python stegno.py -h")
     sys.exit(0)
 
 def append(wrap, text):
