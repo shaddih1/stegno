@@ -1,2 +1,3 @@
-# stegno
-ignore this repo
+# Stegno
+
+## About
