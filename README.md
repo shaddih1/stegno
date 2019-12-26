@@ -7,7 +7,7 @@ forked from sdushantha/stegno
 
 ## About
 
-Hide text inside image and Extract hidden text from image
+      Hide text inside image and Extract hidden text from image
       
 ## Usage
 
