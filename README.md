@@ -1,0 +1,2 @@
+# stegno
+ignore this repo
