@@ -2,9 +2,6 @@
 
 ![language](https://img.shields.io/badge/language-python%2B-green.svg)
 
-forked from sdushantha/stegno
-
-
 ## About
 
       Hide text inside image and Extract hidden text from image
@@ -15,5 +12,10 @@ forked from sdushantha/stegno
      $ python stegno.py -e pic.png  -----> Extract hidden text from image
      $ python stegno.py -----> Interactive menu
      $ bash stegno.sh  -----> Interactive menu
+     
+## Menu
 
-
+      [1] Hide text inside image
+      [2] Extract hidden text from image
+            
+      Chose option:
