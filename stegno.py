@@ -2,21 +2,11 @@
 # -*- coding: utf8 -*-
 
 # library
-import sys
+import sys, argparse
 
 def usage():
-    print("""Stegno Tool
-
-Usage: stegno.py -h file_name
---help               -  show this help message and exit
--h, --hide           -  file name to hide
--t, --text           -  set a text
--e, --extract        -  file name to extract
-
-Examples:
-./stegno.py -h pic.png -t text
-./stegno.py -e pic.png
-""")
+    parser = argparse.ArgumentParser()
+    parse.add_argument("-f", "--file", metavar="FILE_NAME", help="set file name to hide or to extract")
 
 def main():
     # no fancy command-line parsing here
