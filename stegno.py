@@ -4,21 +4,29 @@
 import sys, argparse, subprocess
 
 def usage():
-    parser = parser.ArgumentParser():
+    parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", metavar="FILE_NAME",
     help="set a file name to hide or to extract")
     parser.add_argument("-e", "--extract", action="store_true",
     help="extract hidden text from image ")
     if not len(sys.argv[1:]):
-        subprocess.call(['ls', '-l'])
+        subprocess.check_call(['bash', 'stegno.sh'])
     return parser.parse_args()
 
 def main():
     args = usage()
     file = args.file
     if not args.extract:
-        print(0)
+        try:
+            # python2
+            text = raw_input("Text: ")
+        except NameError:
+            # python3
+            text = input("Text: ")
+        append = subprocess.call(['echo', '{} >> {}'.format(text, file)])
+        print("Text has be hidden inside the image")
     else:
-        print(1)
+        text = subprocess.call(['echo', 'strings {} | tail -1'.format(file)])
+        print("Text: {}".format(extract))
 
 main()
