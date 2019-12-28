@@ -3,42 +3,48 @@
 
 # library
 import sys
-import os
-import subprocess
-import argparse
 
 def usage():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-w", "--wrap", metavar="FILE_NAME", help="set a file name")
-    parser.add_argument("-t", "--text", metavar="\"TEXT\"", help="set a text to hide")
-    parser.add_argument("-e", "--extract", metavar="FILE_NAME", help="set a file name")
-    # no fancy command-line parsing here
-    if not len(sys.argv[1:]):
-        subprocess.call(['bash', 'stegno.sh'])
-    return parser.parse_args()
+    print("""Stegno Tool
 
-def shutdown():
-    print("[Error] - Badly combined commands")
-    print("$ python stegno.py -h / --help")
-    sys.exit(0)
+Usage: stegno.py -h file_name
+--help               -  show this help message and exit
+-h, --hide           -  file name to hide
+-t, --text           -  set a text
+-e, --extract        -  file name to extract
 
-def append(wrap, text):
-    os.system('echo {} >> {}'.format(text, wrap))
-
-def extract(extract):
-    os.system('echo $(strings {} | tail -1)'.format(extract))
+Examples:
+./stegno.py -h pic.png -t text
+./stegno.py -e pic.png
+""")
 
 def main():
-    args = usage()
-    if not args.wrap and not args.text:
-        if args.extract:
-            extract(args.extract)
-    elif args.wrap and args.text:
-        if not args.extract:
-            append(args.wrap, str(args.text))
+    # no fancy command-line parsing here
+    if not len(sys.argv[1:]):
+        usage()
+
+    # read the command-line options
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], ":ht:e:", ["help", "hide", "text", "extract"])
+    except getopt.GetoptError as e:
+        print(str(e))
+        usage()
+
+    for o, a in opts:
+        if o in ("--help"):
+            usage()
+        elif o in ("-h", "--hide"):
+            hide = a
+        elif o in ("-t", "--text"):
+            text = str(a)
+        elif o in ("-e", "--extract"):
+            extract = a
         else:
-            shutdown()
-    else:
-        shutdown()
+            assert False, "Unhandable Option"
+
+    if not hide and text:
+        if extract:
+
+
 
 main()
