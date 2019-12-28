@@ -2,38 +2,23 @@
 # -*- coding: utf8 -*-
 
 # library
-import sys, argparse
+import sys, argparse, subprocess
 
 def usage():
     parser = argparse.ArgumentParser()
-    parse.add_argument("-f", "--file", metavar="FILE_NAME", help="set file name to hide or to extract")
-
-def main():
+    parser.add_argument("-f", "--file", metavar="FILE_NAME", help="set file name to hide or to extract")
+    parser.add_argument("-e", "--extract", action="store_true", help="extract hidden text from image")
     # no fancy command-line parsing here
     if not len(sys.argv[1:]):
-        usage()
+        subprocess.call(["ls", "-l"])
+    return parser.parse_args()
 
-    # read the command-line options
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], ":ht:e:", ["help", "hide", "text", "extract"])
-    except getopt.GetoptError as e:
-        print(str(e))
-        usage()
-
-    for o, a in opts:
-        if o in ("--help"):
-            usage()
-        elif o in ("-h", "--hide"):
-            hide = a
-        elif o in ("-t", "--text"):
-            text = str(a)
-        elif o in ("-e", "--extract"):
-            extract = a
-        else:
-            assert False, "Unhandable Option"
-
-    if not hide and text:
-        if extract:
+def main():
+    args = usage()
+    if not args.extract:
+        file = args.file
+    else:
+        print("error")
 
 
 
