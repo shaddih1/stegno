@@ -1,6 +1,5 @@
 # Stegno
 
-![version](https://img.shields.io/badge/version-0.1-red.svg)
 ![language](https://img.shields.io/badge/language-python%2B-green.svg)
 
 ## About
@@ -16,7 +15,6 @@
 
 ## Usage
 
-     $ python stegno.py -w pic.png -text "Hello World" -----> Hide text inside image
-     $ python stegno.py -e pic.png  -----> Extract hidden text from image
-     $ python stegno.py -----> Interactive menu
-     $ bash stegno.sh  -----> Interactive menu
+     $ python stegno.py -f pic.png      -----> Hide text inside image
+     $ python stegno.py -f pic.png -e   -----> Extract hidden text from image
+     $ bash stegno.sh                   -----> Interactive menu
