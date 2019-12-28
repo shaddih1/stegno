@@ -17,16 +17,14 @@ def main():
     args = usage()
     file = args.file
     if not args.extract:
-        try:
-            # python2
-            text = raw_input("Text: ")
-        except NameError:
-            # python3
-            text = input("Text: ")
+        text = raw_input("Text: ")
         append = subprocess.call(['echo', '{} >> {}'.format(text, file)])
         print("Text has be hidden inside the image")
     else:
         text = subprocess.call(['echo', 'strings {} | tail -1'.format(file)])
         print("Text: {}".format(extract))
 
-main()
+try:
+    main()
+except KeyboardInterrupt:
+    sys.exit(0)
