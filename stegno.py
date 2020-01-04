@@ -20,7 +20,7 @@ def append(file_name):
     print("Text has be hidden inside the image")
 
 def extract(file_name):
-    with open(file_name, 'r') as text;
+    with open(file_name, 'r') as text:
         line = text.readlines()
         extract = [line]
 
@@ -34,5 +34,5 @@ def main():
         append(file_name)
     else:
         print("Text: {}".format(extract()))
-        
+
 main()
