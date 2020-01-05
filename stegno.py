@@ -22,9 +22,9 @@ def append(file_name):
 def extract(file_name):
     with open(file_name, 'r') as text:
         lines = text.readlines()
-        extract = [lines]
+        extract = [lines[-1][-1]]
 
-    return extract[-1][-1]
+    return extract
 
 def main():
     # parse args/options
