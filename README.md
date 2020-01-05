@@ -5,6 +5,14 @@
 ## About
 
       Hide text inside image and Extract hidden text from image
+
+## Python Module
+      
+      sys, argparse
+      
+   How to install argparse
+      
+      easy_install pip && pip install argparse
      
 ## Menu
 
