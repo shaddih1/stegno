@@ -23,6 +23,6 @@
 
 ## Usage
 
-     $ python stegno.py -f pic.png      -----> Hide text inside image
-     $ python stegno.py -f pic.png -e   -----> Extract hidden text from image
-     $ bash stegno.sh                   -----> Interactive menu
+     $ python stegno.py -f pic.png      ----->   Hide text inside image
+     $ python stegno.py -f pic.png -e   ----->   Extract hidden text from image
+     $ bash stegno.sh                   ----->   Interactive menu
