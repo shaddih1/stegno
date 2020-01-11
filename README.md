@@ -1,7 +1,7 @@
 # Stegno
 
-![language](https://img.shields.io/badge/language-Python-blue.svg)
 ![language](https://img.shields.io/badge/language-Shell-green.svg)
+![language](https://img.shields.io/badge/language-Python-blue.svg)
 
 ## About
 
