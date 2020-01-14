@@ -35,4 +35,8 @@ def main():
     else:
         print("Text: {}".format(extract(file_name)))
 
-main()
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboatdInterrupt:
+        sys.exit(0)
