@@ -17,7 +17,7 @@ def append(file_name):
     text = raw_input("Text: ")
     with open(file_name, 'a') as add:
         add.write('\n' + text)
-        print("Text has be hidden inside the image")
+        print("Text has be hidden inside the image.")
 
 def extract(file_name):
     with open(file_name, 'r') as text:
