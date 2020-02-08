@@ -10,7 +10,8 @@ def usage():
     help="set a file name to hide or to extract")
     parser.add_argument("-e", "--extract", action="store_true",
     help="extract hidden text from image ")
-
+    if len(sys.argv) < 2:
+        parser.print_help()
     return parser.parse_args()
 
 def append(file_name):
