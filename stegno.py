@@ -38,5 +38,5 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except KeyboatdInterrupt:
+    except KeyboardInterrupt:
         sys.exit(0)
