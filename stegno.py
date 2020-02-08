@@ -12,6 +12,7 @@ def usage():
     help="extract hidden text from image ")
     if len(sys.argv) < 2:
         parser.print_help()
+        sys.exit(0)
     return parser.parse_args()
 
 def append(file_name):
