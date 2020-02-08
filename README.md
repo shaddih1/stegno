@@ -13,7 +13,7 @@
       
    How to install argparse
       
-      easy_install pip && pip install argparse
+      $ easy_install pip && pip install argparse
      
 ## Menu
 
@@ -34,6 +34,6 @@
  
  ## Examples 
 
-     $ python stegno.py -f pic.png      ----->   Hide text inside image
-     $ python stegno.py -f pic.png -e   ----->   Extract hidden text from image
-     $ bash stegno.sh                   ----->   Interactive menu
+     $ python stegno.py -f pic.png      >>>>   Hide text inside image
+     $ python stegno.py -f pic.png -e   >>>>   Extract hidden text from image
+     $ bash stegno.sh                   >>>>   Interactive menu
