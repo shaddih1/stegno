@@ -24,6 +24,16 @@
 
 ## Usage
 
+      usage: stegno.py [-h] [-f FILE_NAME] [-e]
+
+      optional arguments:
+        -h, --help            show this help message and exit
+        -f FILE_NAME, --file FILE_NAME
+                        set a file name to hide or to extract
+        -e, --extract         extract hidden text from image
+ 
+ ## Examples 
+
      $ python stegno.py -f pic.png      ----->   Hide text inside image
      $ python stegno.py -f pic.png -e   ----->   Extract hidden text from image
      $ bash stegno.sh                   ----->   Interactive menu
